@@ -1,7 +1,5 @@
 #include <stdio.h>
-/*
- * main entry
- */
+/* main entry */
 int main(void)
 {
 	/* Description: Prints a string to the standard output */
