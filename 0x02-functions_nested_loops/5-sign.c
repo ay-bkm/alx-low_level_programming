@@ -4,6 +4,7 @@
  * Return: 0 if n is zero
  * 1 if n is greater then zero
  * -1 if n is less than zero
+ *  @n: is the checked int
  */
 int print_sign(int n)
 {
