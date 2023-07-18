@@ -1,15 +1,18 @@
-#include <stdio.h>
+#include "main.h"
 /**
  * main - prints "_putchar"
  * Return: 0 Always (Success)
  */
  int main(void) 
  {
-     char _putchar[] = "_putchar";
-     for (int i = 0; i <=8; i++)
-     {
-         putchar(_putchar[i]);
-     }
-     putchar('\n');
+     _putchar('_');
+     _putchar('p');
+     _putchar('u');
+     _putchar('t');
+     _putchar('c');
+     _putchar('h');
+     _putchar('a');
+     _putchar('r');
+     _putchar('\n');
      return 0;
  }
