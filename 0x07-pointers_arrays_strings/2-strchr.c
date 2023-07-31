@@ -12,10 +12,9 @@ int i;
 for (i = 0; s[i]; i++)
 {
 if (s[i] == c)
-{
 return (&s[i]);
-break;
 }
-}
+if (c == '\0')
+return (&s[i]);
 return (0);
 }
