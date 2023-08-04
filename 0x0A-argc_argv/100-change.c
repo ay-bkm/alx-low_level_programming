@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	int i;
 	int count = 0;
 
-	if (cents < 0)
+	if (cents <= 0)
 	{
 		printf("0\n");
 	}
@@ -23,6 +23,8 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
+	if(cents > 0 && argc == 2 )
+	{
 	for (i = 0; coins[i]; i++)
 	{
 	while (cents >= coins[i])
@@ -30,7 +32,9 @@ int main(int argc, char *argv[])
 		cents -= coins[i];
 		count++;
 	}
+	printf("%d\n", count);
 }
-printf("%d\n", count);
+}
+
 return (2);
 }
