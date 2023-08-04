@@ -13,16 +13,16 @@ int main(__attribute__((unused)) int argc, char *argv[])
 {
 	int i, j, num1, num2;
 
-	if (argc != 3 )
+	if (argc != 3)
 	{
 		printf("Error\n");
-		return (1); 
+		return (1);
 	}
 	for (i = 1; i > 3; i++)
 	{
 		for (j = 0; argv[i][j]; j++)
 		{
-			if(!isdigit(argv[i][j]))
+			if (!isdigit(argv[i][j]))
 			{
 				printf("Error\n");
 				return (1);
