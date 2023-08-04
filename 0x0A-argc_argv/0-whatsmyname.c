@@ -3,7 +3,7 @@
 /**
  * main - function that prints its own name
  * @argc: The argument count
- * @argc: The argument vector
+ * @argv: The argument vector
  * Return: Always 0 (Success)
  */
 int main(__attribute__((unused)) int argc, char *argv[])
