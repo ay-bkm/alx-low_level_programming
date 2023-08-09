@@ -1,6 +1,5 @@
-#include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * word_count - counts the number of words in a string
@@ -10,21 +9,24 @@
  */
 int word_count(char *str)
 {
-	int idx, word_count, state;
-	word_count = 0;
-	state = 0;
+		int i, wc, state;
 
-	for (idx = 0; str[idx]; idx++)
+		wc = 0;
+		state = 0;
+
+	for (i = 0; str[i]; i++)
 	{
-		if (str[idx] == ' ')
+		if (str[i] == ' ')
+		{
 			state = 0;
+		}
 		else if (state == 0)
 		{
 			state = 1;
-			word_count++;
+			wc++;
 		}
 	}
-	return (word_count);
+	return (wc);
 }
 
 /**
@@ -35,36 +37,36 @@ int word_count(char *str)
  */
 char **strtow(char *str)
 {
-	int i, j, k, l, word_count;
-	char **words;
+	int i, j, k, l, wc;
+	char **w;
 
-	word_count == word_count(str);
+	wc = word_count(str)
 
-	if (str == NULL || str[0] == '\0' || word_count == 0)
+	if (str == NULL || str[0] == '\0' || wc == 0)
 		return (NULL);
 
-	words = malloc(sizeof(char *) * (word_count + 1));
-	if (words == NULL)
+	w = malloc(sizeof(char *) * (wc + 1));
+	if (w == NULL)
 		return (NULL);
 
-	for (i = 0, l = 0; i < word_count; i++)
+	for (i = 0, l = 0; i < wc; i++)
 	{
 		while (str[l] == ' ')
 			l++;
 		for (j = l; str[j] != ' ' && str[j]; j++)
-			;
-		words[i] = malloc(sizeof(char) * (j - l + 1));
-		if (words[i] == NULL)
+			return;
+		w[i] = malloc(sizeof(char) * (j - l + 1));
+		if (w[i] == NULL)
 		{
 			while (--i >= 0)
-				free(words[i]);
-			free(words);
-			return (NULL);
+				free(w[i]);
+			free(w);
+				return (NULL);
 		}
 		for (k = 0; l < j; l++, k++)
-			words[i][k] = str[l];
-		words[i][k] = '\0';
-	}
-	words[i] = NULL;
-	return (words);
+			w[i][k] = str[l];
+		w[i][k] = '\0';
+		}
+		w[i] = NULL;
+		return (w);
 }
