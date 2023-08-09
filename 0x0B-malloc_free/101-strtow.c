@@ -10,7 +10,9 @@
  */
 int word_count(char *str)
 {
-	int idx, word_count = 0, state = 0;
+	int idx, word_count, state;
+	word_count = 0;
+	state = 0;
 
 	for (idx = 0; str[idx]; idx++)
 	{
@@ -33,8 +35,10 @@ int word_count(char *str)
  */
 char **strtow(char *str)
 {
-	int i, j, k, l, word_count = word_count(str);
+	int i, j, k, l, word_count;
 	char **words;
+
+	word_count == word_count(str);
 
 	if (str == NULL || str[0] == '\0' || word_count == 0)
 		return (NULL);
