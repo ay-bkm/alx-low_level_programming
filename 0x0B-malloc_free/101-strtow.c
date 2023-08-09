@@ -40,7 +40,7 @@ char **strtow(char *str)
 	int i, j, k, l, wc;
 	char **w;
 
-	wc = word_count(str)
+	wc = word_count(str);
 
 	if (str == NULL || str[0] == '\0' || wc == 0)
 		return (NULL);
@@ -54,7 +54,7 @@ char **strtow(char *str)
 		while (str[l] == ' ')
 			l++;
 		for (j = l; str[j] != ' ' && str[j]; j++)
-			return;
+			;
 		w[i] = malloc(sizeof(char) * (j - l + 1));
 		if (w[i] == NULL)
 		{
