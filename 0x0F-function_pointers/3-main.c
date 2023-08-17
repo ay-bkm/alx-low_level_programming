@@ -13,6 +13,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 	int num1, num2;
 	char *op;
+	int result;
 
 	if (argc != 4)
 	{
@@ -36,8 +37,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		exit(100);
 	}
 
-	int result = get_op_func(op)(num1, num2);
-
+	result = get_op_func(op)(num1, num2);
 	printf("%d\n", result);
 
 	return (0);
