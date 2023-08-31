@@ -12,6 +12,9 @@ unsigned int binary_to_uint(const char *b)
 	decval = 1;
 	decnum = 0;
 	len = strlen(b) - 1;
+
+	if (b == NULL)
+		return (0);
 	for (i = len; i >= 0; i--)
 	{
 
@@ -24,7 +27,7 @@ unsigned int binary_to_uint(const char *b)
 			decnum += decval;
 			decval *= 2;
 		}
-		else if (b == NULL || b[i] != '0' || b[i] != '1')
+		else if (b[i] != '0' || b[i] != '1')
 		{
 			return (0);
 		}
