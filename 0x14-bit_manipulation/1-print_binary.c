@@ -2,23 +2,18 @@
 /**
  * print_binary - prints binary
  * @n: the number
- * Return: void 
+ * Return: void
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int mask = 1;
-	int i, flag = 0;
-
-	for (i = 63; i >= 0; i--)
+	if (n >> 0)
 	{
-		if ((n >> i) & mask)
-		{
-			flag = 1;
-			_putchar('1');
-		}
-		else if (flag)
-			_putchar('0');
+		if (n >> 1)
+			print_binary(n >> 1);
+		_putchar((n & 1) + '0');
 	}
-	if (!flag)
+	else
+	{
 		_putchar('0');
+	}
 }
