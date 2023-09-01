@@ -11,7 +11,7 @@ int get_bit(unsigned long int n, unsigned int index)
 	unsigned long int maximum;
 
 	maximum = 0x01;
-	maximum <<= idx;
+	maximum <<= index;
 	if (maximum == 0)
 		return (-1);
 
