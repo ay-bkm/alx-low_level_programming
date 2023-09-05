@@ -1,4 +1,8 @@
-#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <elf.h>
 
 /**
  * check_arguments - Check if the number of arguments is correct
@@ -38,15 +42,9 @@ void read_elf_header(int file, Elf64_Ehdr *ehdr)
 	ssize_t bytes_read;
 
 	bytes_read = read(file, ehdr, sizeof(*ehdr));
-	if (bytes_read == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Cannot read ELF header\n");
-		close(file);
-		exit(98);
-	}
 	if (bytes_read != sizeof(*ehdr))
 	{
-		dprintf(STDERR_FILENO, "Error: ELF header is truncated\n");
+		dprintf(STDERR_FILENO, "Error: Cannot read ELF header\n");
 		close(file);
 		exit(98);
 	}
@@ -118,7 +116,7 @@ char *get_class(Elf64_Ehdr *ehdr)
  */
 void print_class(Elf64_Ehdr *ehdr)
 {
-	printf("  Class:                         %s\n", get_class(ehdr));
+	printf("  Class:                             %s\n", get_class(ehdr));
 }
 
 /**
@@ -156,7 +154,7 @@ char *get_data(Elf64_Ehdr *ehdr)
  */
 void print_data(Elf64_Ehdr *ehdr)
 {
-	printf("  Data:                           %s\n", get_data(ehdr));
+	printf("  Data:                              %s\n", get_data(ehdr));
 }
 
 /**
@@ -345,7 +343,6 @@ int main(int argc, char **argv)
 	open_file(&file, argv);
 
 	read_elf_header(file, &ehdr);
-
 	check_elf_header(&ehdr);
 	print_magic(&ehdr);
 	print_class(&ehdr);

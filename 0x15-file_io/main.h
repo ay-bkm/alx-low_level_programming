@@ -33,4 +33,5 @@ void print_type(Elf64_Ehdr *ehdr);
 void print_entry(Elf64_Ehdr *ehdr);
 void close_file(int file);
 
+
 #endif
