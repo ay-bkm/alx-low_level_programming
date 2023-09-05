@@ -14,7 +14,6 @@ int append_text_to_file(const char *filename, char *text_content);
 void check_arguments(int argc);
 void open_files(int *file_from, int *file_to, char *argv[]);
 void copy_content(int file_from, int file_to, char *argv[]);
-void close_files(int file_from, int file_to);
 void check_arguments(int argc);
 void open_file(int *file, char *argv[]);
 void read_elf_header(int file, Elf64_Ehdr *ehdr);
