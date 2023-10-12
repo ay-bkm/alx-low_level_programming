@@ -2,7 +2,7 @@
 #define LISTS_H
 
 #include <stddef.h>
-#include <stdio.h>
+
 /**
  * struct dlistint_s - Doubly linked list node structure
  * @n: Integer stored in the node
@@ -11,12 +11,14 @@
  */
 typedef struct dlistint_s
 {
-	int n;
-	struct dlistint_s *prev;
-	struct dlistint_s *next;
+    int n;
+    struct dlistint_s *prev;
+    struct dlistint_s *next;
 } dlistint_t;
 
-/* Function prototype for printing the elements of the list */
+/* Function prototypes for printing the elements, counting the elements, and adding a new node to the list */
 size_t print_dlistint(const dlistint_t *h);
+size_t dlistint_len(const dlistint_t *h);
+dlistint_t *add_dnodeint(dlistint_t **head, const int n);
 
 #endif /* LISTS_H */
