@@ -9,6 +9,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *h_table;
 	hash_node_t **arr;
+
 	unsigned long int i = 0;
 
 	if (size == 0)
