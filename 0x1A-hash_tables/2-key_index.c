@@ -1,20 +1,17 @@
-#include "h_tables.h"
+#include "hash_tables.h"
 
 /**
- * key_index - Retrieves the index of a key in the hash table array
- * @key: Key to be hashed and indexed
- * @size: Size of the hash table array
- * Return: Index where the key/value pair is stored in the hash table array
+ * key_index - Get the index at which a key/value pair should
+ *             be stored in array of a hash table.
+ * @key: The key to get the index of.
+ * @size: The size of the array of the hash table.
+ *
+ * Return: The index of the key.
+ *
+ * Description: Uses the djb2 algorithm.
  */
+
 unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
-	unsigned long int idx;
-
-	if (size == 0)
-	{
-		return (0);
-	}
-
-	idx = hash_djb2(key);
-	return (idx % size);
+	return (hash_djb2(key) % size);
 }
